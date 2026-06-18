@@ -51,6 +51,12 @@ public class MenuInicialVista extends BaseFrame{
         btClientes.setBackground(Color.black);
         btClientes.setForeground(Color.white);
         
+        //ActionListeners de los botones
+        btCita.addActionListener(e ->{
+            new citasVista("Administracion de citas").mostrar();
+            this.dispose();
+        });
+        
         //Agregar los botones
         panelBotones.add(btCita);
         panelBotones.add(btDiseño);
