@@ -29,12 +29,13 @@ public class MenuInicialVista extends BaseFrame{
         JLabel titulo = new JLabel("Administracion tienda tatuajes");
         titulo.setFont(new Font("SansSerif", Font.BOLD, 32));
         titulo.setHorizontalAlignment(SwingConstants.CENTER);
+        titulo.setForeground(Color.WHITE);
         base.setBackground(new Color(30, 30, 30));
         base.add(titulo,BorderLayout.NORTH);
         
         
         //Botones del menu inicial
-        JPanel panelBotones = new JPanel(new GridLayout(3, 2, 12, 12));
+        JPanel panelBotones = new JPanel(new GridLayout(3, 2, 50, 50));
         panelBotones.setBackground(new Color(30, 30, 30));
         panelBotones.setBorder(BorderFactory.createEmptyBorder(20, 0, 10, 0));
         
