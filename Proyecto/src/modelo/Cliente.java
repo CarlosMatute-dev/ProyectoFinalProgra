@@ -2,7 +2,7 @@ package modelo;
 public class Cliente {
     private String nombre;
     private int rut;
-
+    //aa
     public Cliente(String nombre, int rut) {
         this.nombre = nombre;
         this.rut = rut;
