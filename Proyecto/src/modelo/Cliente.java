@@ -1,28 +1,49 @@
 package modelo;
 public class Cliente {
-    private String nombre;
-    private int rut;
-    //aa
-    public Cliente(String nombre, int rut) {
-        this.nombre = nombre;
+    private String nombreCompleto;
+    private String rut;
+    private String telefono;
+    private String fechaNacimiento;
+
+    public Cliente(String nombreCompleto, String rut, String telefono, String fechaNacimiento) {
+        this.nombreCompleto = nombreCompleto;
         this.rut = rut;
+        this.telefono = telefono;
+        this.fechaNacimiento = fechaNacimiento;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreCompleto() {
+        return nombreCompleto;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
     }
 
-    public int getRut() {
+    public String getRut() {
         return rut;
     }
 
-    public void setRut(int rut) {
+    public void setRut(String rut) {
         this.rut = rut;
     }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+    
     
     
 }
