@@ -7,17 +7,29 @@ public class Cita {
     private LocalDateTime fechaHora;
     private Cliente cliente;
     private Diseño diseno;
+    private Tatuador tatuador;
     private EstadoCita estado;
     private double precio;
 
-    public Cita(int idCita, LocalDateTime fechaHora, Cliente cliente, Diseño diseno, EstadoCita estado, double precio) {
+    public Cita(int idCita, LocalDateTime fechaHora, Cliente cliente, Diseño diseno, Tatuador tatuador, EstadoCita estado, double precio) {
         this.idCita = idCita;
         this.fechaHora = fechaHora;
         this.cliente = cliente;
         this.diseno = diseno;
+        this.tatuador = tatuador;
         this.estado = estado;
         this.precio = precio;
     }
+
+    public Tatuador getTatuador() {
+        return tatuador;
+    }
+
+    public void setTatuador(Tatuador tatuador) {
+        this.tatuador = tatuador;
+    }
+
+    
 
     public int getIdCita() {
         return idCita;

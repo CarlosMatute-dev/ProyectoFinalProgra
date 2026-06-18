@@ -1,14 +1,27 @@
 package modelo;
-public class Cliente {
-    private String nombreCompleto;
-    private String rut;
+public class Cliente extends Persona{
     private String telefono;
     private String fechaNacimiento;
 
-    public Cliente(String nombreCompleto, String rut, String telefono, String fechaNacimiento) {
-        this.nombreCompleto = nombreCompleto;
-        this.rut = rut;
+    public Cliente(String telefono, String fechaNacimiento, String nombreCompleto, String rut) {
+        super(nombreCompleto, rut);
         this.telefono = telefono;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -27,23 +40,7 @@ public class Cliente {
     public void setRut(String rut) {
         this.rut = rut;
     }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
     
     
-    
+  
 }
