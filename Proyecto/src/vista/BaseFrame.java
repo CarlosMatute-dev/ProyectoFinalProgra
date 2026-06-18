@@ -10,6 +10,12 @@ public abstract class BaseFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
+    //Oculta ventana actual y muestra la que viene(destino)
+    public void navegar(BaseFrame destino){
+        this.setVisible(false);
+        destino.setVisible(true);
+    }
+    
     public abstract void mostrar(); 
     
 }

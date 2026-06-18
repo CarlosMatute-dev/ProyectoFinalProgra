@@ -1,5 +1,7 @@
 package vista;
 
+import javax.swing.*;
+import java.awt.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -29,6 +31,10 @@ public class MenuInicialVista extends BaseFrame{
         this.add(titulo,BorderLayout.NORTH);
         
         //Botones del menu inicial
+        JPanel panelBotones = new JPanel(new GridLayout(3, 2, 12, 12));
+        panelBotones.setBackground(new Color(30, 30, 30));
+        panelBotones.setBorder(BorderFactory.createEmptyBorder(20, 0, 10, 0));
+        
         JButton btCita = new JButton("Ver Citas");
         JButton btDiseño = new JButton("Ver o editar Diseños");
         JButton btClientes = new JButton("Ver clientes");
