@@ -61,6 +61,10 @@ public class MenuInicialVista extends BaseFrame{
             new citasVista("Administracion de citas").mostrar();
             this.dispose();
         });
+        btDiseño.addActionListener(e ->{
+            new DiseñoVista("Administracion de diseños").mostrar();
+            this.dispose();
+        });
         
         //Agregar los botones
         panelBotones.add(btCita);
