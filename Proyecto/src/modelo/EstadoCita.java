@@ -1,4 +1,7 @@
 package modelo;
 public enum EstadoCita {
-    PENDIENTE, CONFIRMADA, COMPLETADA, CANCELADA;
+    PENDIENTE, 
+    CONFIRMADA, 
+    COMPLETADA, 
+    CANCELADA
 }
