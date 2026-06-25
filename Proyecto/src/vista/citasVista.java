@@ -6,6 +6,8 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 //import java.awt.Font;
 import java.awt.GridLayout;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -20,6 +22,8 @@ import modelo.EstadoCita;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerDateModel;
 import javax.swing.SpinnerNumberModel;
+import modelo.Cita;
+import modelo.SistemaCita;
 
 public class citasVista extends BaseFrame{
 
@@ -32,6 +36,7 @@ public class citasVista extends BaseFrame{
         //Primer panel
         JPanel base = new JPanel();
         this.add(base,BorderLayout.NORTH);
+        SistemaCita sistCita = new SistemaCita();
         
         
         //Ventana y titulo inicial
@@ -103,14 +108,26 @@ public class citasVista extends BaseFrame{
 
             // 4. Si el usuario presiona OK, añadir fila al modelo
             if (result == JOptionPane.OK_OPTION) {
-                // Extraemos los datos de los componentes en sus tipos nativos de Swing/Java.util
                 java.util.Date fechaRaw = (java.util.Date) fecha.getValue();
                 int idCliente = (Integer) spinnerCliente.getValue();
                 int idDiseno = (Integer) spinnerDiseno.getValue();
                 int precio = (Integer) spinnerPrecio.getValue();
                 EstadoCita estado = (EstadoCita) comboEstado.getSelectedItem();
-
-                SistemaCita.registrarNuevaCita(fechaRaw, idCliente, idDiseno, precio, estado);
+                LocalDate fechaLocalDate = fechaRaw.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                
+                Object[] fila = {
+                    1,
+                    fechaLocalDate,
+                    idCliente,
+                    idDiseno,
+                    estado,
+                    precio         
+                };
+                
+                modelo.addRow(fila);
+                sistCita.registrarCita(1 ,fechaLocalDate, idCliente,idDiseno, estado, precio);
+                
+                    }
                 });
         
         bntDel.addActionListener(e ->{
