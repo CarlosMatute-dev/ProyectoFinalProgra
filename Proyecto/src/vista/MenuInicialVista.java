@@ -35,28 +35,41 @@ public class MenuInicialVista extends BaseFrame{
         
         
         //Botones del menu inicial
-        JPanel panelBotones = new JPanel(new GridLayout(3, 2, 50, 50));
+        JPanel panelBotones = new JPanel(new GridLayout(3, 1, 20, 20));
         panelBotones.setBackground(new Color(30, 30, 30));
-        panelBotones.setBorder(BorderFactory.createEmptyBorder(20, 0, 10, 0));
         
         JButton btCita = new JButton("Ver Citas");
         JButton btDiseño = new JButton("Ver o editar Diseños");
         JButton btClientes = new JButton("Ver clientes");
         
         //Color de fondo y letra de los botones
-        btCita.setBackground(Color.black);
+        btCita.setBackground(new Color(30, 30, 30));
         btCita.setForeground(Color.white);
-        btDiseño.setBackground(Color.black);
+        btDiseño.setBackground(new Color(30, 30, 30));
         btDiseño.setForeground(Color.white);
-        btClientes.setBackground(Color.black);
+        btClientes.setBackground(new Color(30, 30, 30));
         btClientes.setForeground(Color.white);
+        
+        //ActionListeners de los botones
+        btCita.addActionListener(e ->{
+            new citasVista("Administracion de citas").mostrar();
+            this.dispose();
+        });
         
         //Agregar los botones
         panelBotones.add(btCita);
         panelBotones.add(btDiseño);
         panelBotones.add(btClientes);
         
-        this.add(panelBotones,BorderLayout.CENTER);
+        //Agregar los botones a otro panel para centrarlo
+        JPanel panelCentrado = new JPanel(new java.awt.GridBagLayout());
+        panelCentrado.setBackground(new Color(30, 30, 30));
+        
+        panelCentrado.add(panelBotones);
+        this.add(panelCentrado);
+        
+        this.add(panelCentrado,BorderLayout.CENTER);
+        
         this.setVisible(true);
     }
 }

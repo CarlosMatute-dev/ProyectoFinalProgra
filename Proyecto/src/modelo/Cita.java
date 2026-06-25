@@ -1,9 +1,12 @@
 package modelo;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Cita {
+    private static int contador;
     private int idCita;
+<<<<<<< HEAD
     private LocalDateTime fechaHora;
     private Cliente cliente;
     private Diseño diseno;
@@ -17,6 +20,22 @@ public class Cita {
         this.cliente = cliente;
         this.diseno = diseno;
         this.tatuador = tatuador;
+=======
+    private LocalDate fecha;
+    private int idCliente;
+    private int idDiseno;
+    //private Cliente cliente;
+    //private Diseño diseno;
+    private EstadoCita estado;
+    private double precio;
+
+    public Cita(int idCita, LocalDate fecha, int idCliente, int idDiseno, EstadoCita estado, double precio) {
+        this.idCita = contador;
+        contador += 1;
+        this.fecha = fecha;
+        this.idCliente = idCliente;
+        this.idDiseno = idDiseno;
+>>>>>>> eb1f5e2ed0f7bc0ecd871b6699c877dfb8ca3e76
         this.estado = estado;
         this.precio = precio;
     }
@@ -39,29 +58,14 @@ public class Cita {
         this.idCita = idCita;
     }
 
-    public LocalDateTime getFechaHora() {
-        return fechaHora;
+    public LocalDate getFecha() {
+        return fecha;
     }
 
-    public void setFechaHora(LocalDateTime fechaHora) {
-        this.fechaHora = fechaHora;
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
     }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public Diseño getDiseno() {
-        return diseno;
-    }
-
-    public void setDiseno(Diseño diseno) {
-        this.diseno = diseno;
-    }
+    
 
     public EstadoCita getEstado() {
         return estado;

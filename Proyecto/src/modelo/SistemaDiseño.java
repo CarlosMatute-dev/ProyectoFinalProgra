@@ -9,8 +9,6 @@ public class SistemaDiseño {
     private ArrayList<Diseño> disenios;
 
     public SistemaDiseño(ArrayList<Cita> citas, ArrayList<Cliente> clientes, ArrayList<Diseño> disenios) {
-        citas = new ArrayList<>();
-        clientes = new ArrayList<>();
         disenios = new ArrayList<>();
     }
     
