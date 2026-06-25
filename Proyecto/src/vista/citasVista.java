@@ -115,7 +115,7 @@ public class citasVista extends BaseFrame{
                 EstadoCita estado = (EstadoCita) comboEstado.getSelectedItem();
                 LocalDate fechaLocalDate = fechaRaw.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                 
-                Cita cita = new Cita(contadorCita +1,fechaLocalDate, idCliente,idDiseno, estado, precio);
+                Cita cita = new Cita(contadorCita +1 ,fechaLocalDate, idCliente,idDiseno, estado, precio);
                 Object[] fila = {
                     cita.getIdCita(),
                     fechaLocalDate,
