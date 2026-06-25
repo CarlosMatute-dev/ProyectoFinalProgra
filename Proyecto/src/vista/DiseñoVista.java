@@ -20,6 +20,7 @@ public class DiseñoVista extends BaseFrame {
     @Override
     public void mostrar() {
         JPanel base = new JPanel();
+        this.setLayout(new BorderLayout());
         this.add(base,BorderLayout.NORTH);
         
         //Ventana y titulo inicial
@@ -31,6 +32,10 @@ public class DiseñoVista extends BaseFrame {
         titulo.setForeground(Color.WHITE);
         base.setBackground(new Color(30, 30, 30));
         base.add(titulo,BorderLayout.NORTH);
+        
+        PanelDiseño panel = new PanelDiseño("imagenes/Cinnamoroll-6-8.jpg", "Diseño: Tatuaje Cinnamoroll");
+        this.add(panel, BorderLayout.CENTER);
+        
         this.setVisible(true);
     }
 }

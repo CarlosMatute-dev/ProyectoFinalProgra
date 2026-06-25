@@ -66,6 +66,7 @@ public class citasVista extends BaseFrame{
         //BOTONES
         JButton bntAdd = new JButton("Añadir");
         JButton bntDel = new JButton("Borrar");
+        JButton bntPdf = new JButton("Generar PDF");
         
         //PANEL BOTONES
         JPanel panelBotones = new JPanel();
@@ -145,8 +146,39 @@ public class citasVista extends BaseFrame{
             }
         });
         
+        bntPdf.addActionListener(e -> {
+            org.openpdf.text.Document documento = new org.openpdf.text.Document();
+            try {
+                org.openpdf.text.pdf.PdfWriter.getInstance(documento, new java.io.FileOutputStream("Citas.pdf"));
+                documento.open();
+                documento.add(new org.openpdf.text.Paragraph("Reporte de Citas"));
+                documento.add(new org.openpdf.text.Paragraph(" "));
+                
+                org.openpdf.text.pdf.PdfPTable tablaPdf = new org.openpdf.text.pdf.PdfPTable(6);
+                tablaPdf.addCell("Cita");
+                tablaPdf.addCell("Fecha");
+                tablaPdf.addCell("Cliente");
+                tablaPdf.addCell("Diseño");
+                tablaPdf.addCell("Estado");
+                tablaPdf.addCell("Precio");
+                
+                for (int i = 0; i < modelo.getRowCount(); i++) {
+                    for (int j = 0; j < 6; j++) {
+                        tablaPdf.addCell(modelo.getValueAt(i, j).toString());
+                    }
+                }
+                
+                documento.add(tablaPdf);
+                documento.close();
+                JOptionPane.showMessageDialog(this, "PDF generado exitosamente en Citas.pdf");
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Error al generar PDF: " + ex.getMessage());
+            }
+        });
+        
         panelBotones.add(bntAdd);
         panelBotones.add(bntDel);
+        panelBotones.add(bntPdf);
         
         this.add(panelBotones, BorderLayout.SOUTH);
         this.setVisible(true);
