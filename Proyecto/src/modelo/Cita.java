@@ -16,7 +16,7 @@ public class Cita {
 
     public Cita(int idCita, LocalDate fecha, int idCliente, int idDiseno, EstadoCita estado, double precio) {
         this.idCita = contador;
-        contador +=  1;
+        contador += 1;
         this.fecha = fecha;
         this.idCliente = idCliente;
         this.idDiseno = idDiseno;

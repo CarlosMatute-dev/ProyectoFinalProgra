@@ -2,9 +2,7 @@ package vista;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
-//import java.awt.Font;
 import java.awt.GridLayout;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -16,7 +14,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import modelo.EstadoCita;
 import javax.swing.JSpinner;
@@ -115,7 +112,7 @@ public class citasVista extends BaseFrame{
                 EstadoCita estado = (EstadoCita) comboEstado.getSelectedItem();
                 LocalDate fechaLocalDate = fechaRaw.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                 
-                Cita cita = new Cita(contadorCita +1 ,fechaLocalDate, idCliente,idDiseno, estado, precio);
+                Cita cita = new Cita(contadorCita + 1 ,fechaLocalDate, idCliente,idDiseno, estado, precio);
                 Object[] fila = {
                     cita.getIdCita(),
                     fechaLocalDate,
@@ -139,7 +136,7 @@ public class citasVista extends BaseFrame{
                 return;
             }
             // Confirmar antes de eliminar
-            String nombre = (String) modelo.getValueAt(fila1, 0);
+            int nombre = (int) modelo.getValueAt(fila1, 0);
             int resp = JOptionPane.showConfirmDialog(this,
                 "¿Eliminar la cita de " + nombre + "?", "Confirmar",
                 JOptionPane.YES_NO_OPTION);

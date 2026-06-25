@@ -24,7 +24,7 @@ public class MenuInicialVista extends BaseFrame{
         this.add(base,BorderLayout.NORTH);
         
         //Ventana y titulo inicial
-        this.setSize(800, 640);
+        this.setSize(600,350);
 
         JLabel titulo = new JLabel("Administracion tienda tatuajes");
         titulo.setFont(new Font("SansSerif", Font.BOLD, 32));
@@ -38,9 +38,15 @@ public class MenuInicialVista extends BaseFrame{
         JPanel panelBotones = new JPanel(new GridLayout(3, 1, 20, 20));
         panelBotones.setBackground(new Color(30, 30, 30));
         
-        JButton btCita = new JButton("Ver Citas");
+        JButton btCita = new JButton("Gestion Citas");
         JButton btDiseño = new JButton("Ver o editar Diseños");
         JButton btClientes = new JButton("Ver clientes");
+        
+        Dimension tamañoBoton = new Dimension(250, 50); 
+        
+        btCita.setPreferredSize(tamañoBoton);
+        btDiseño.setPreferredSize(tamañoBoton);
+        btClientes.setPreferredSize(tamañoBoton);
         
         //Color de fondo y letra de los botones
         btCita.setBackground(new Color(30, 30, 30));
@@ -66,7 +72,6 @@ public class MenuInicialVista extends BaseFrame{
         panelCentrado.setBackground(new Color(30, 30, 30));
         
         panelCentrado.add(panelBotones);
-        this.add(panelCentrado);
         
         this.add(panelCentrado,BorderLayout.CENTER);
         
