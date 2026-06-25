@@ -26,7 +26,7 @@ import modelo.Cita;
 import modelo.SistemaCita;
 
 public class citasVista extends BaseFrame{
-
+    private static int contadorCita = 0;
     public citasVista(String titulo) {
         super(titulo);
     }
@@ -115,18 +115,19 @@ public class citasVista extends BaseFrame{
                 EstadoCita estado = (EstadoCita) comboEstado.getSelectedItem();
                 LocalDate fechaLocalDate = fechaRaw.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                 
+                Cita cita = new Cita(contadorCita +1,fechaLocalDate, idCliente,idDiseno, estado, precio);
                 Object[] fila = {
-                    1,
+                    cita.getIdCita(),
                     fechaLocalDate,
                     idCliente,
                     idDiseno,
                     estado,
                     precio         
                 };
-                
+                //Guarda la cita en una fila de la tabla
                 modelo.addRow(fila);
-                sistCita.registrarCita(1 ,fechaLocalDate, idCliente,idDiseno, estado, precio);
-                
+                //Guarda la cita en un arraylist de citas
+                sistCita.registrarCita(cita);
                     }
                 });
         

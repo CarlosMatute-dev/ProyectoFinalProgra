@@ -13,12 +13,8 @@ public class SistemaCita {
         citas = new ArrayList<>();
     }
     
-    public void registrarCita(int idCita,LocalDate fecha, int idCliente, int idDiseno, EstadoCita estado, int precio ) {
-
-        Cita cita = new Cita(idCita, fecha, idCliente, idDiseno, estado, precio);
-        citas.add(cita);
-        
-        
+    public void registrarCita(Cita cita ) {
+        citas.add(cita);  
     }
     
 }

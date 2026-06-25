@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Cita {
+    private static int contador;
     private int idCita;
     private LocalDate fecha;
     private int idCliente;
@@ -14,7 +15,8 @@ public class Cita {
     private double precio;
 
     public Cita(int idCita, LocalDate fecha, int idCliente, int idDiseno, EstadoCita estado, double precio) {
-        this.idCita = idCita;
+        this.idCita = contador;
+        contador += 1;
         this.fecha = fecha;
         this.idCliente = idCliente;
         this.idDiseno = idDiseno;
